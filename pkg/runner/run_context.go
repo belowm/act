@@ -293,7 +293,7 @@ func (rc *RunContext) startJobContainer() common.Executor {
 			for k, v := range interpolatedEnvs {
 				envs = append(envs, fmt.Sprintf("%s=%s", k, v))
 			}
-			username, password, err = rc.handleServiceCredentials(ctx, spec.Credentials)
+			username, password, err := rc.handleServiceCredentials(ctx, spec.Credentials)
 			if err != nil {
 				return fmt.Errorf("failed to handle service %s credentials: %w", serviceID, err)
 			}
